@@ -1,0 +1,39 @@
+import pygame
+pygame.init
+#creates game screen and caption
+ScreenWidth = 800
+ScreenHeight = 800
+R = 200
+G = 0
+B = 200
+Xpos= 200
+Ypos = 400
+rectLength =300
+rectWidth= 300
+rectSize = 10
+
+
+screen = pygame.display.set_mode((ScreenWidth, ScreenHeight))
+pygame.display.set_caption("simple base code")
+#game variables
+doExit = False #variable to quit out of game loop
+
+#BEGIN GAME LOOP######################################################
+while not doExit:
+   
+    #pygame's way of listening for events (key presses, mouse clicks, etc)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+           doExit = True #lets you quit program
+
+    #keyboard input-----------------------------------
+  
+     
+    #render section-----------------------------------
+    pygame.draw.rect(screen, (R, G, B), (Xpos, Ypos, rectLength, rectWidth), rectSize)
+
+
+    pygame.display.flip() #update graphics each game loop
+
+#END GAME LOOP#######################################################
+pygame.quit()
